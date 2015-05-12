@@ -1,0 +1,207 @@
+.TH "PPIP" "1" "12 May 2015" "" ""
+.SH NAME
+ppip \- Peter's CP/M PIP clone/variant
+.SH SYNOPSIS
+.LP
+.nf
+\fBppip\fR [\fB-hv\fR] [\fB-d\fR \fIdelimiter\fR] [\fB-s\fR \fIdelimiter\fR] [\fB-o\fR \fIpip-options\fR]
+     [\fIdestination\fR=\fIsource\fR[,\fIsource\fR]*]*
+.fi
+
+.SH "DESCRIPTION"
+.sp
+.LP
+\fBppip\fR is a small command line tool that tries to mimic the classical CP/M PIP (Peripheral
+Interchange Program) utility - with some adaptions for Unix systems (and some limitations). It
+is sort of like a mix of the normal unix tools cp, dd, tr and sed (and some others) all in one.
+
+.SH "COMMAND LINE OPTIONS"
+.sp
+.LP
+The following normal (Unix) command line options are supported as of version 1.6. See below for
+the supported PIP copying options.
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fB-h\fR\fR
+.ad
+.RS 15n
+.rt
+Prints information about available options.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fB-d\fR\fIdelimiter\fR\fR
+.ad
+.RS 15n
+.rt
+Change the destination delimiter (default: =)
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fB-s\fR\fIdelimiter\fR\fR
+.ad
+.RS 15n
+.rt
+Change the source delimiter (default: ,)
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fB-o\fR\fIpip-options\fR\fR
+.ad
+.RS 15n
+.rt
+Global PIP copying options (see below).
+.RE
+
+.SH "PIP COPYING OPTIONS"
+.sp
+.LP
+The following PIP options are supported as of version 1.6. 
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBE\fR\fR
+.ad
+.RS 15n
+.rt
+Echo everything to standard output
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBO\fR\fR
+.ad
+.RS 15n
+.rt
+Binary copy mode.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBU\fR\fR
+.ad
+.RS 15n
+.rt
+Convert to upper case.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBL\fR\fR
+.ad
+.RS 15n
+.rt
+Convert to lower case.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBF\fR\fR
+.ad
+.RS 15n
+.rt
+Filter form feed characters from input.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBZ\fR\fR
+.ad
+.RS 15n
+.rt
+Zero parity (8:th) bit from input.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBD\fR\fIn\fR\fR
+.ad
+.RS 15n
+.rt
+Truncate characters that extend after column \fIn\fR (default: 80).
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBT\fR\fIn\fR\fR
+.ad
+.RS 15n
+.rt
+Expand TAB to SPC. Tab stops every \fIn\fR character (default: 8).
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBN\fR\fIn\fR\fR
+.ad
+.RS 15n
+.rt
+Add line number+colon, or if \fIn\fR > 1, zeropad+tab.
+.RE
+
+.sp
+.ne 2
+.mk
+.na
+\fB\fBP\fR\fIn\fR\fR
+.ad
+.RS 15n
+.rt
+Add form feed every \fIn\fR line (default: 60).
+.RE
+
+.SH "EXAMPLES"
+.sp
+.ne 2
+.mk
+.na
+\fB\fBppip -oN2 't1.txt[U]=f1.txt[T],f2.txt' t2.txt=f3.txt\fR\fR
+
+.SH "EXIT STATUS"
+.sp
+.LP
+Returns 0 if file transfer was successful.
+
+.SH "SEE ALSO"
+.PP
+cp (1), dd (1), tr (1) and sed (1).
+
+.SH "AUTHOR"
+.PP
+ppip was written by Peter Eriksson <pen@lysator.liu.se>.
+.PP
+Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU Free
+Documentation License, Version 1.1 or any later version
+published by the Free Software Foundation; with no Invariant
+Sections, no Front-Cover Texts and no Back-Cover Texts.
