@@ -1,0 +1,23 @@
+PPIP - Peter's CP/M PIP Clone/Variant
+
+Copyright (c) Peter Eriksson <pen@lysator.liu.se>
+
+At last - you have been waiting long for this valuable tool to be
+available on Unix systems. And here it is. A clone of the CP/M
+Peripheral Interchange Program - aka PIP - utility.
+
+
+LICENSE
+
+PPIP is available under the GNU GENERAL PUBLIC LICENSE version 3. See the file
+LICENSE for details.
+
+
+BUGS / MISSING FEATURES
+
+If you find bugs or manage to add missing features, I'd be happy to accept
+your suggestions. Please send them to me at:
+
+     pen@lysator.liu.se
+
+- Peter
